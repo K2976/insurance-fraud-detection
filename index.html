@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Insurance Fraud Detection</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<h1>Insurance Fraud Detection</h1>
+
+<form action="/predict" method="post">
+
+<input type="number" name="age" placeholder="Customer Age" required>
+
+<input type="number" name="months" placeholder="Months as Customer" required>
+
+<input type="number" name="claim" placeholder="Total Claim Amount" required>
+
+<select name="severity">
+<option value="0">Minor</option>
+<option value="1">Major</option>
+<option value="2">Total Loss</option>
+</select>
+
+<button type="submit">Predict</button>
+
+</form>
+
+<h2>{{ prediction_text }}</h2>
+
+</body>
+</html>
